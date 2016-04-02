@@ -1,0 +1,30 @@
+{
+  "name": "mr-robot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "prepublish": "node_modules/typings/dist/bin.js install; node_modules/typescript/bin/tsc",
+      "start": "node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duncanmak/mr-robot.git"
+  },
+  "author": "Duncan Mak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duncanmak/mr-robot/issues"
+  },
+  "homepage": "https://github.com/duncanmak/mr-robot#readme",
+  "dependencies": {
+    "botbuilder": "^0.6.4",
+    "lodash": "^4.7.0",
+    "restify": "^4.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.9",
+    "typings": "^0.7.11"
+  }
+}
