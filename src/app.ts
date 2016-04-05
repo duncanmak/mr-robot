@@ -11,4 +11,4 @@ const server = createServer();
 server.post('/api/messages', bot.verifyBotFramework(), bot.listen());
 server.get('/hello', (req, res, next) => res.send('Hello World!'));
 
-server.listen(process.env.port || 3978, () => console.log('%s listening to %s', server.name, server.url));
+server.listen(process.env.PORT || 3978, () => console.log('%s listening to %s', server.name, server.url));
