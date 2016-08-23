@@ -9,6 +9,6 @@ bot.add('/', (session) => session.send('Hello World'));
 
 const server = createServer();
 server.post('/api/messages', bot.verifyBotFramework(), bot.listen());
-server.get('/hello', (req, res, next) => res.send('Hello World!'));
+server.get('/hello', (req, res, next) => res.send('Hello friend.'));
 
 server.listen(process.env.PORT || 3978, () => console.log('%s listening to %s', server.name, server.url));
