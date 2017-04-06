@@ -11,5 +11,6 @@ var connector = new ChatConnector({
 
 var bot = new UniversalBot(connector);
 server.post('/api/messages', connector.listen());
-
 bot.dialog('/',  (session) => session.send("Hello World"));
+
+server.get('/test', (req, res, next) => res.send("This is a test"));

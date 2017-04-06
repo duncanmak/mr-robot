@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node node_modules/typescript/bin/tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,8 +21,10 @@
   "dependencies": {
     "@types/lodash": "^4.14.61",
     "@types/node": "^7.0.12",
+    "@types/restify": "^2.0.42",
     "botbuilder": "^3.7.0",
     "lodash": "^4.17.4",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "typescript": "^2.2.2"
   }
 }

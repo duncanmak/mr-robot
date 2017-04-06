@@ -2,13 +2,26 @@
 # yarn lockfile v1
 
 
+"@types/bunyan@*":
+  version "0.0.36"
+  resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-0.0.36.tgz#fdd865c58e8eaaf0ad401cd032dc861f5c57342a"
+  dependencies:
+    "@types/node" "*"
+
 "@types/lodash@^4.14.61":
   version "4.14.61"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.61.tgz#0518c10805b1f9d21f98f82b1311ac2a6ec75892"
 
-"@types/node@^7.0.12":
+"@types/node@*", "@types/node@^7.0.12":
   version "7.0.12"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.12.tgz#ae5f67a19c15f752148004db07cbbb372e69efc9"
+
+"@types/restify@^2.0.42":
+  version "2.0.42"
+  resolved "https://registry.yarnpkg.com/@types/restify/-/restify-2.0.42.tgz#6592376dc230c45afcffd4f9ee7bccd2776b1e1a"
+  dependencies:
+    "@types/bunyan" "*"
+    "@types/node" "*"
 
 ajv@^4.9.1:
   version "4.11.5"
@@ -828,6 +841,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
 typedarray@~0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.2.tgz#606022508479b55ffa368b58fee963a03dfd7b0c"
 
 url-join@^1.1.0:
   version "1.1.0"
