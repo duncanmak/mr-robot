@@ -1,16 +1,41 @@
 import { createServer } from 'restify';
-import { ChatConnector, UniversalBot } from 'botbuilder';
+import { ChatConnector, IntentDialog, Prompts, UniversalBot } from 'botbuilder';
 
 const server = createServer();
 server.listen(process.env.PORT || 3978, () => console.log('%s listening to %s', server.name, server.url));
 
-var connector = new ChatConnector({
+let connector = new ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-var bot = new UniversalBot(connector);
+let bot = new UniversalBot(connector);
 server.post('/api/messages', connector.listen());
-bot.dialog('/',  (session) => session.send("Hello World"));
+
+let intents = new IntentDialog();
+bot.dialog('/', intents);
+
+intents.matches(/^hello/, [
+    (session) => session.beginDialog('/hello')
+]);
+
+intents.onDefault([
+    (session, args, next) => {
+        if (!session.userData["_session"])
+            session.beginDialog("/hello");
+        else
+            next();
+    },
+    (session) => {
+        session.send("%s", session.userData["_session"]);
+    }
+]);
+
+bot.dialog('/hello', [
+    (session) => {
+        session.userData["_session"] = session;
+        session.endDialog();
+    }
+]);
 
 server.get('/test', (req, res, next) => res.send("This is a test"));
