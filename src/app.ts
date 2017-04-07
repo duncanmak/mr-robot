@@ -21,19 +21,20 @@ intents.matches(/^hello/, [
 
 intents.onDefault([
     (session, args, next) => {
-        if (!session.userData["_session"])
+        if (!session.userData.address)
             session.beginDialog("/hello");
         else
             next();
     },
     (session) => {
-        session.send("%s", session.userData["_session"]);
+        session.send("Hello %s", session.userData.address);
     }
 ]);
 
 bot.dialog('/hello', [
     (session) => {
-        session.userData["_session"] = session;
+        let address = JSON.stringify(session.message.address);
+        session.userData.address = address;
         session.endDialog();
     }
 ]);
